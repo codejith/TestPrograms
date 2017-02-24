@@ -11,9 +11,9 @@ private:
 void InsertionSort::setElement()
 {
     
-    std::cout << "Enter the limit : " << std::endl;
+    
     std::cin >> _limit;
-    std::cout << "Enter " << _limit << " elements : " <<std::endl;
+    
     for(int i = 0; i < _limit; ++i)
     {
         std::cin >> _array[i];
