@@ -1,24 +1,27 @@
 #include <iostream>
 int main()
 {
-    int pOnelead=0, pTwoLead = 0, scoreOne, scoreTwo, limit;
+    int pOnelead=0, pTwoLead = 0, pOneTotalScore = 0, pTwoTotalScore = 0, scoreOne, scoreTwo, limit;
     std::cin >> limit;
     while(limit--)
     {
         std::cin >> scoreOne >> scoreTwo;
-        if (scoreOne > scoreTwo)
+        pOneTotalScore += scoreOne;
+        pTwoTotalScore += scoreTwo;
+        
+        if (pOneTotalScore > pTwoTotalScore)
         {
-            if ((scoreOne-scoreTwo) > pOnelead)
+            if ((pOneTotalScore - pTwoTotalScore) > pOnelead)
             {
-                pOnelead = (scoreOne - scoreTwo);
+                pOnelead = (pOneTotalScore - pTwoTotalScore);
                 
             }
         }
-        else if (scoreTwo > scoreOne)
+        else if (pTwoTotalScore > pOneTotalScore)
         {
-            if ((scoreTwo-scoreOne) > pTwoLead)
+            if ((pTwoTotalScore-pOneTotalScore) > pTwoLead)
             {
-                pTwoLead = (scoreTwo - scoreOne);
+                pTwoLead = (pTwoTotalScore - pOneTotalScore);
             } 
         }
         
@@ -26,11 +29,11 @@ int main()
     
     if (pOnelead > pTwoLead)
     {
-        std::cout << "1 " << pOnelead <<std::endl;
+        std::cout << "1 " << pOnelead << std::endl;
     }
     else
     {
-        std::cout << "2 " << pTwoLead <<std::endl;
+        std::cout << "2 " << pTwoLead << std::endl;
     }
 
     return 0;
